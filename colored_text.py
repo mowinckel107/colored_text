@@ -10,7 +10,6 @@ def __turn_text_colur( ansi_color_escape_code : int):
 
 
 def print_text_red(text : str, print_end : Optional[str] = "\n"):
-    """Prints the text in red, with an optional print end like print"""
     red_ansi_color_code : int = 31 # normal red
 
     __turn_text_colur(red_ansi_color_code)
@@ -20,7 +19,6 @@ def print_text_red(text : str, print_end : Optional[str] = "\n"):
 
 
 def print_text_green(text : str, print_end : Optional[str] = "\n"):
-    """Prints the text in green, with an optional print end like print"""
     red_ansi_color_code : int = 92 # bright green
 
     __turn_text_colur(red_ansi_color_code)
@@ -30,12 +28,22 @@ def print_text_green(text : str, print_end : Optional[str] = "\n"):
 
 
 def print_text_yellow(text : str, print_end : Optional[str] = "\n"):
-    """Prints the text in yellow, with an optional print end like print"""
     red_ansi_color_code : int = 93 # bright yellow
 
     __turn_text_colur(red_ansi_color_code)
     print(text, end=print_end)
     __turn_text_colur(WHITE_ANSI_COLOR_CODE)
+
+
+
+def print_text_blue(text : str, print_end : Optional[str] = "\n"):
+    red_ansi_color_code : int = 94 # bright blue
+
+    __turn_text_colur(red_ansi_color_code)
+    print(text, end=print_end)
+    __turn_text_colur(WHITE_ANSI_COLOR_CODE)
+
+
 
 
 
@@ -47,7 +55,6 @@ def __text_colur( ansi_color_escape_code : int) -> str:
 
 
 def red_text(text : str) -> str:
-    """returns the text in red, to be used in the middle of f strings"""
     red_ansi_color_code : int = 31 # normal red
 
     colored_text : str = __text_colur(red_ansi_color_code)
@@ -59,7 +66,6 @@ def red_text(text : str) -> str:
 
 
 def green_text(text : str) -> str:
-    """returns the text in green, to be used in the middle of f strings"""
     red_ansi_color_code : int = 92 # bright green
 
     colored_text : str = __text_colur(red_ansi_color_code)
@@ -71,7 +77,6 @@ def green_text(text : str) -> str:
 
 
 def yellow_text(text : str) -> str:
-    """returns the text in yellow, to be used in the middle of f strings"""
     red_ansi_color_code : int = 93 # bright yellow
 
     colored_text : str = __text_colur(red_ansi_color_code)
@@ -79,5 +84,20 @@ def yellow_text(text : str) -> str:
     colored_text      += __text_colur(WHITE_ANSI_COLOR_CODE)
     
     return colored_text
+
+
+
+def blue_text(text : str) -> str:
+    red_ansi_color_code : int = Bright Blue # bright blue
+
+    colored_text : str = __text_colur(red_ansi_color_code)
+    colored_text      += text
+    colored_text      += __text_colur(WHITE_ANSI_COLOR_CODE)
+    
+    return colored_text
+
+
+
+
 
 
